@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:object_mapper_library/object_mapper_library.dart';
-import 'package:simple_app/src/models/person.dart';
+// import 'package:object_mapper_library/object_mapper_library.dart';
 import 'dart:convert';
 
 void main() {
@@ -67,12 +66,12 @@ class MyHomePage extends StatelessWidget {
     Map<String, dynamic> jsonMap = json.decode(jsonString);
 
     // Usa la función `Product.fromJson` para convertir el mapa en un objeto Product
-    // Product product = Product.fromJson(jsonMap);
+    // final person = Person.fromJson(jsonMap);
     // Person person = Person.fromJson(jsonMap);
-    final person = fromJson(jsonMap, factory: Person.fromJson);
+    // final person = fromJson(jsonMap, factory: Person.fromJson);
 
     // Imprime el objeto Product
-    print(person);
+    // print(person);
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: Center(
