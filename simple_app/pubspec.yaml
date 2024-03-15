@@ -9,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # object_mapper_library:
-  #   path: "../object_mapper_library"
+  object_mapper_library:
+    path: "../object_mapper_library"
   # [BUILD GENERATOR DEPENDENCIES]
   annotations_library:
     path: ../annotations_library/

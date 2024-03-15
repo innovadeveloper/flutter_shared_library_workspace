@@ -345,6 +345,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  object_mapper_library:
+    dependency: "direct main"
+    description:
+      path: "../object_mapper_library"
+      relative: true
+    source: path
+    version: "0.0.1"
   package_config:
     dependency: transitive
     description:
