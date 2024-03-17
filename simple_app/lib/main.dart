@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 // import 'package:object_mapper_library/object_mapper_library.dart';
 import 'dart:convert';
 
+import 'package:rxdart/subjects.dart';
+import 'package:simple_app/src/counter_widget.dart';
+import 'package:simple_app/src/models/product.dart';
+import 'package:simple_app/src/states/counter_bloc.dart';
+import 'package:simple_app/src/states/counter_state.dart';
+
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp();
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +63,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  final CounterBloc _counterBloc = CounterBloc();
+
   @override
   Widget build(BuildContext context) {
     // Define un JSON como String
@@ -72,13 +80,23 @@ class MyHomePage extends StatelessWidget {
 
     // Imprime el objeto Product
     // print(person);
+    // var example = ExampleWidget();
+    var center = Center(
+      child: Text(
+        "library 4",
+        style: Theme.of(context).textTheme.bodySmall,
+      ),
+    );
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: Center(
-        child: Text(
-          "library",
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+      body: CounterWidget(_counterBloc),
+      // body : ExampleWidget(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _counterBloc.incrementCounter();
+        },
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
       ),
     );
   }

@@ -16,6 +16,10 @@ dependencies:
     path: ../annotations_library/
   ########################
   cupertino_icons: ^1.0.2
+  freezed: ^2.4.7
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  rxdart: ^0.27.0
 
 dev_dependencies:
   flutter_test:
@@ -25,8 +29,8 @@ dev_dependencies:
   generators_library:
     path: ../generators_library/
   graphs: "2.2.0" # Important to generate the files .g.dart
+  json_serializable: ^6.7.1
   ########################
-  flutter_lints: ^2.0.0
   
   
 flutter:
