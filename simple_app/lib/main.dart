@@ -11,40 +11,43 @@ import 'package:simple_app/src/states/counter_notifier.dart';
 import 'package:simple_app/src/states/counter_state.dart';
 import 'package:simple_app/src/states/counter_state_notifier.dart';
 import 'package:intl/intl.dart';
-
+import 'package:simple_app/src/ui/clock/clock_controller.dart';
+import 'package:simple_app/src/ui/products/product_controller.dart';
+import 'package:simple_app/src/ui/products/product_state.dart';
+import 'package:simple_app/src/ui/products/product_widget.dart';
 
 // final helloWorldProvider = Provider<String>((ref) {
 //   return 'Hello world 2';
 // });
 
-final helloWorldProvider = Provider<String>((_) => 'Hello world');
+// final helloWorldProvider = Provider<String>((_) => 'Hello world');
 
-// Note: StateNotifierProvider has *two* type annotations
-final clockProvider = StateNotifierProvider<Clock, DateTime>((ref) {
-  return Clock();
+// // Note: StateNotifierProvider has *two* type annotations
+// final clockProvider = StateNotifierProvider<Clock, DateTime>((ref) {
+//   return Clock();
+// });
+
+final clockController = StateNotifierProvider<ClockController, DateTime>((ref) {
+  return ClockController();
 });
 
-class HelloWorldWidget extends ConsumerWidget {
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // 3. use ref.watch() to get the value of the provider
-    final helloWorld = ref.watch(helloWorldProvider);
-    return Text(helloWorld);
-  }
-}
+final productController =
+    StateNotifierProvider<ProductController, ProductState>((ref) {
+  return ProductController();
+});
 
+// [WIDGET PAGE]
 class ClockWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // watch the StateNotifierProvider to return a DateTime (the state)
-    final currentTime = ref.watch(clockProvider);
+    final currentTime = ref.watch(clockController);
     // format the time as `hh:mm:ss`
     final timeFormatted = DateFormat.Hms().format(currentTime);
     // final timeFormatted = DateFormat.Hms().format(currentTime);
-    return Text(timeFormatted);
+    return Center(child: Text(timeFormatted));
   }
 }
-
 
 void main() {
   runApp(
@@ -115,18 +118,22 @@ class MyHomePage extends StatelessWidget {
         style: Theme.of(context).textTheme.bodySmall,
       ),
     );
-    return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      // body: CounterWidget(_counterBloc),
-      body: ClockWidget(),
-      // body : ExampleWidget(),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     _counterBloc.incrementCounter();
-      //   },
-      //   tooltip: 'Increment',
-      //   child: Icon(Icons.add),
-      // ),
+    return Consumer(
+      builder: (context, ref, child) => Scaffold(
+        backgroundColor: Theme.of(context).primaryColor,
+        // body: CounterWidget(_counterBloc),
+        // body: ClockWidget(),
+        body: ProductWidget(),
+        // body : ExampleWidget(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            ref.read(productController.notifier).incrementCounter();
+            // _counterBloc.incrementCounter();
+          },
+          tooltip: 'Increment',
+          child: Icon(Icons.add),
+        ),
+      ),
     );
   }
 }

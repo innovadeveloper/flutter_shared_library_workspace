@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'counter_state.dart';
+part of 'product_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$CounterState {
+mixin _$ProductState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,16 +69,16 @@ mixin _$CounterState {
 }
 
 /// @nodoc
-abstract class $CounterStateCopyWith<$Res> {
-  factory $CounterStateCopyWith(
-          CounterState value, $Res Function(CounterState) then) =
-      _$CounterStateCopyWithImpl<$Res, CounterState>;
+abstract class $ProductStateCopyWith<$Res> {
+  factory $ProductStateCopyWith(
+          ProductState value, $Res Function(ProductState) then) =
+      _$ProductStateCopyWithImpl<$Res, ProductState>;
 }
 
 /// @nodoc
-class _$CounterStateCopyWithImpl<$Res, $Val extends CounterState>
-    implements $CounterStateCopyWith<$Res> {
-  _$CounterStateCopyWithImpl(this._value, this._then);
+class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
+    implements $ProductStateCopyWith<$Res> {
+  _$ProductStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +95,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$ProductStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -109,7 +109,7 @@ class _$InitialImpl implements Initial {
 
   @override
   String toString() {
-    return 'CounterState.initial()';
+    return 'ProductState.initial()';
   }
 
   @override
@@ -196,7 +196,7 @@ class _$InitialImpl implements Initial {
   }
 }
 
-abstract class Initial implements CounterState {
+abstract class Initial implements ProductState {
   const factory Initial() = _$InitialImpl;
 }
 
@@ -209,7 +209,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$ProductStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -223,7 +223,7 @@ class _$LoadingImpl implements Loading {
 
   @override
   String toString() {
-    return 'CounterState.loading()';
+    return 'ProductState.loading()';
   }
 
   @override
@@ -310,7 +310,7 @@ class _$LoadingImpl implements Loading {
   }
 }
 
-abstract class Loading implements CounterState {
+abstract class Loading implements ProductState {
   const factory Loading() = _$LoadingImpl;
 }
 
@@ -323,7 +323,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$ProductStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -337,7 +337,7 @@ class _$ErrorImpl implements Error {
 
   @override
   String toString() {
-    return 'CounterState.error()';
+    return 'ProductState.error()';
   }
 
   @override
@@ -424,7 +424,7 @@ class _$ErrorImpl implements Error {
   }
 }
 
-abstract class Error implements CounterState {
+abstract class Error implements ProductState {
   const factory Error() = _$ErrorImpl;
 }
 
@@ -441,7 +441,7 @@ abstract class _$$DataImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$DataImplCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res, _$DataImpl>
+    extends _$ProductStateCopyWithImpl<$Res, _$DataImpl>
     implements _$$DataImplCopyWith<$Res> {
   __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
       : super(_value, _then);
@@ -478,7 +478,7 @@ class _$DataImpl implements Data {
 
   @override
   String toString() {
-    return 'CounterState.data(product: $product)';
+    return 'ProductState.data(product: $product)';
   }
 
   @override
@@ -573,7 +573,7 @@ class _$DataImpl implements Data {
   }
 }
 
-abstract class Data implements CounterState {
+abstract class Data implements ProductState {
   const factory Data(final Product product) = _$DataImpl;
 
   Product get product;
