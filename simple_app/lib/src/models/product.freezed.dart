@@ -12,7 +12,7 @@ part of 'product.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Product {
@@ -105,21 +105,20 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
 }
 
 /// @nodoc
-abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$$ProductImplCopyWith(
-          _$ProductImpl value, $Res Function(_$ProductImpl) then) =
-      __$$ProductImplCopyWithImpl<$Res>;
+abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
+  factory _$$_ProductCopyWith(
+          _$_Product value, $Res Function(_$_Product) then) =
+      __$$_ProductCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name, Color color});
 }
 
 /// @nodoc
-class __$$ProductImplCopyWithImpl<$Res>
-    extends _$ProductCopyWithImpl<$Res, _$ProductImpl>
-    implements _$$ProductImplCopyWith<$Res> {
-  __$$ProductImplCopyWithImpl(
-      _$ProductImpl _value, $Res Function(_$ProductImpl) _then)
+class __$$_ProductCopyWithImpl<$Res>
+    extends _$ProductCopyWithImpl<$Res, _$_Product>
+    implements _$$_ProductCopyWith<$Res> {
+  __$$_ProductCopyWithImpl(_$_Product _value, $Res Function(_$_Product) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -129,7 +128,7 @@ class __$$ProductImplCopyWithImpl<$Res>
     Object? name = null,
     Object? color = null,
   }) {
-    return _then(_$ProductImpl(
+    return _then(_$_Product(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -148,9 +147,8 @@ class __$$ProductImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProductImpl implements _Product {
-  const _$ProductImpl(
-      {required this.id, required this.name, required this.color});
+class _$_Product implements _Product {
+  const _$_Product({required this.id, required this.name, required this.color});
 
   @override
   final String id;
@@ -165,10 +163,10 @@ class _$ProductImpl implements _Product {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProductImpl &&
+            other is _$_Product &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color));
@@ -180,8 +178,8 @@ class _$ProductImpl implements _Product {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
-      __$$ProductImplCopyWithImpl<_$ProductImpl>(this, _$identity);
+  _$$_ProductCopyWith<_$_Product> get copyWith =>
+      __$$_ProductCopyWithImpl<_$_Product>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -256,7 +254,7 @@ abstract class _Product implements Product {
   const factory _Product(
       {required final String id,
       required final String name,
-      required final Color color}) = _$ProductImpl;
+      required final Color color}) = _$_Product;
 
   @override
   String get id;
@@ -265,26 +263,23 @@ abstract class _Product implements Product {
   Color get color;
   @override
   @JsonKey(ignore: true)
-  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
+  _$$_ProductCopyWith<_$_Product> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PhoneImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$$PhoneImplCopyWith(
-          _$PhoneImpl value, $Res Function(_$PhoneImpl) then) =
-      __$$PhoneImplCopyWithImpl<$Res>;
+abstract class _$$_PhoneCopyWith<$Res> implements $ProductCopyWith<$Res> {
+  factory _$$_PhoneCopyWith(_$_Phone value, $Res Function(_$_Phone) then) =
+      __$$_PhoneCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name, Color color});
 }
 
 /// @nodoc
-class __$$PhoneImplCopyWithImpl<$Res>
-    extends _$ProductCopyWithImpl<$Res, _$PhoneImpl>
-    implements _$$PhoneImplCopyWith<$Res> {
-  __$$PhoneImplCopyWithImpl(
-      _$PhoneImpl _value, $Res Function(_$PhoneImpl) _then)
+class __$$_PhoneCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$_Phone>
+    implements _$$_PhoneCopyWith<$Res> {
+  __$$_PhoneCopyWithImpl(_$_Phone _value, $Res Function(_$_Phone) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -294,7 +289,7 @@ class __$$PhoneImplCopyWithImpl<$Res>
     Object? name = null,
     Object? color = null,
   }) {
-    return _then(_$PhoneImpl(
+    return _then(_$_Phone(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -313,8 +308,8 @@ class __$$PhoneImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PhoneImpl implements _Phone {
-  const _$PhoneImpl(
+class _$_Phone implements _Phone {
+  const _$_Phone(
       {required this.id, required this.name, this.color = Colors.red});
 
   @override
@@ -331,10 +326,10 @@ class _$PhoneImpl implements _Phone {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PhoneImpl &&
+            other is _$_Phone &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color));
@@ -346,8 +341,8 @@ class _$PhoneImpl implements _Phone {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PhoneImplCopyWith<_$PhoneImpl> get copyWith =>
-      __$$PhoneImplCopyWithImpl<_$PhoneImpl>(this, _$identity);
+  _$$_PhoneCopyWith<_$_Phone> get copyWith =>
+      __$$_PhoneCopyWithImpl<_$_Phone>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -422,7 +417,7 @@ abstract class _Phone implements Product {
   const factory _Phone(
       {required final String id,
       required final String name,
-      final Color color}) = _$PhoneImpl;
+      final Color color}) = _$_Phone;
 
   @override
   String get id;
@@ -431,27 +426,26 @@ abstract class _Phone implements Product {
   Color get color;
   @override
   @JsonKey(ignore: true)
-  _$$PhoneImplCopyWith<_$PhoneImpl> get copyWith =>
+  _$$_PhoneCopyWith<_$_Phone> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InsuranceImplCopyWith<$Res>
-    implements $ProductCopyWith<$Res> {
-  factory _$$InsuranceImplCopyWith(
-          _$InsuranceImpl value, $Res Function(_$InsuranceImpl) then) =
-      __$$InsuranceImplCopyWithImpl<$Res>;
+abstract class _$$_InsuranceCopyWith<$Res> implements $ProductCopyWith<$Res> {
+  factory _$$_InsuranceCopyWith(
+          _$_Insurance value, $Res Function(_$_Insurance) then) =
+      __$$_InsuranceCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name, double quote});
 }
 
 /// @nodoc
-class __$$InsuranceImplCopyWithImpl<$Res>
-    extends _$ProductCopyWithImpl<$Res, _$InsuranceImpl>
-    implements _$$InsuranceImplCopyWith<$Res> {
-  __$$InsuranceImplCopyWithImpl(
-      _$InsuranceImpl _value, $Res Function(_$InsuranceImpl) _then)
+class __$$_InsuranceCopyWithImpl<$Res>
+    extends _$ProductCopyWithImpl<$Res, _$_Insurance>
+    implements _$$_InsuranceCopyWith<$Res> {
+  __$$_InsuranceCopyWithImpl(
+      _$_Insurance _value, $Res Function(_$_Insurance) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -461,7 +455,7 @@ class __$$InsuranceImplCopyWithImpl<$Res>
     Object? name = null,
     Object? quote = null,
   }) {
-    return _then(_$InsuranceImpl(
+    return _then(_$_Insurance(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -480,8 +474,8 @@ class __$$InsuranceImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InsuranceImpl implements _Insurance {
-  const _$InsuranceImpl(
+class _$_Insurance implements _Insurance {
+  const _$_Insurance(
       {required this.id, required this.name, required this.quote});
 
   @override
@@ -497,10 +491,10 @@ class _$InsuranceImpl implements _Insurance {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InsuranceImpl &&
+            other is _$_Insurance &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.quote, quote) || other.quote == quote));
@@ -512,8 +506,8 @@ class _$InsuranceImpl implements _Insurance {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InsuranceImplCopyWith<_$InsuranceImpl> get copyWith =>
-      __$$InsuranceImplCopyWithImpl<_$InsuranceImpl>(this, _$identity);
+  _$$_InsuranceCopyWith<_$_Insurance> get copyWith =>
+      __$$_InsuranceCopyWithImpl<_$_Insurance>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -588,7 +582,7 @@ abstract class _Insurance implements Product {
   const factory _Insurance(
       {required final String id,
       required final String name,
-      required final double quote}) = _$InsuranceImpl;
+      required final double quote}) = _$_Insurance;
 
   @override
   String get id;
@@ -597,6 +591,6 @@ abstract class _Insurance implements Product {
   double get quote;
   @override
   @JsonKey(ignore: true)
-  _$$InsuranceImplCopyWith<_$InsuranceImpl> get copyWith =>
+  _$$_InsuranceCopyWith<_$_Insurance> get copyWith =>
       throw _privateConstructorUsedError;
 }
