@@ -11,10 +11,13 @@ import 'package:simple_app/src/states/counter_notifier.dart';
 import 'package:simple_app/src/states/counter_state.dart';
 import 'package:simple_app/src/states/counter_state_notifier.dart';
 import 'package:intl/intl.dart';
+import 'package:simple_app/src/ui/abstract_widget.dart';
 import 'package:simple_app/src/ui/clock/clock_controller.dart';
+import 'package:simple_app/src/ui/order/order_widget.dart';
 import 'package:simple_app/src/ui/products/product_controller.dart';
 import 'package:simple_app/src/ui/products/product_state.dart';
 import 'package:simple_app/src/ui/products/product_widget.dart';
+import 'package:simple_app/src/utils/isolate.dart';
 
 // final helloWorldProvider = Provider<String>((ref) {
 //   return 'Hello world 2';
@@ -49,7 +52,7 @@ class ClockWidget extends ConsumerWidget {
   }
 }
 
-void main() {
+void main() async {
   runApp(
     ProviderScope(
       child: MyApp(),
@@ -107,8 +110,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+Future<String> fetchData() async {
+  // Simulación de una operación asíncrona que devuelve datos después de un retraso
+  await Future.delayed(Duration(seconds: 2));
+  return 'Datos cargados exitosamente';
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   final CounterBloc _counterBloc = CounterBloc();
+  var isChangeWindow = false;
 
   @override
   Widget build(BuildContext context) {
@@ -123,11 +138,28 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         // body: CounterWidget(_counterBloc),
         // body: ClockWidget(),
-        body: ProductWidget(),
+        body: Center(
+            child: (isChangeWindow)
+                ? OrderWidget(extraParameter: "widget child")
+                : Text(
+                    "simple text",
+                    style: TextStyle(color: Colors.red),
+                  )),
+        // body: Center(
+        //     child: FutureBuilder(
+        //         future: result,
+        //         builder: (context, snapshot) {
+        //           print('result from isolate : ${snapshot.data}');
+        //           return ProductWidget();
+        //         })),
+
         // body : ExampleWidget(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            ref.read(productController.notifier).incrementCounter();
+            setState(() {
+              isChangeWindow = !isChangeWindow;
+            });
+            // ref.read(productController.notifier).incrementCounter();
             // _counterBloc.incrementCounter();
           },
           tooltip: 'Increment',
