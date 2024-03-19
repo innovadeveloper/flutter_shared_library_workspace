@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import 'package:object_mapper_library/object_mapper_library.dart';
+// import 'package:object_mapper_library/object_mapper_library.dart';
 import 'dart:convert';
 
 import 'package:rxdart/subjects.dart';
@@ -15,6 +16,7 @@ import 'package:simple_app/src/ui/clock/clock_controller.dart';
 import 'package:simple_app/src/ui/products/product_controller.dart';
 import 'package:simple_app/src/ui/products/product_state.dart';
 import 'package:simple_app/src/ui/products/product_widget.dart';
+import 'package:lib_3/lib_3.dart';
 
 // final helloWorldProvider = Provider<String>((ref) {
 //   return 'Hello world 2';
@@ -112,6 +114,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    OperatorFromGitlab().addOne(2);
+
     var center = Center(
       child: Text(
         "library 4",
@@ -124,6 +128,8 @@ class MyHomePage extends StatelessWidget {
         // body: CounterWidget(_counterBloc),
         // body: ClockWidget(),
         body: ProductWidget(),
+        // body: ResponsiveRowColumn(
+        //     widget1: Text("A"), widget2: Text("B"), widget3: Text("C")),
         // body : ExampleWidget(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {

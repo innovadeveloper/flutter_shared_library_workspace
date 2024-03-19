@@ -9,8 +9,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  object_mapper_library:
-    path: "../object_mapper_library"
+  # object_mapper_library:
+  #   path: "../object_mapper_library"
+  lib_3:
+    git:
+      url: https://kbaltazar:glpat-ussqdkd3aFznXkRiqqaT@gitlab.abexa.pe/abexa-flutter-libraries/library2-flutter-training.git
+      ref: master
+  flutter_package_test:
+    git:
+      url: https://github.com/innovadeveloper/flutter_package_test.git
+      ref: master
+  carousel_pro:
+    git:
+      url: https://github.com/jlouage/flutter-carousel-pro.git
+      ref: master # branch name
   # [BUILD GENERATOR DEPENDENCIES]
   annotations_library:
     path: ../annotations_library/
