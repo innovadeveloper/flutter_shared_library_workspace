@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get_it/get_it.dart';
+// import 'package:object_mapper_library/object_mapper_library.dart';
 // import 'package:object_mapper_library/object_mapper_library.dart';
 import 'dart:convert';
 
 import 'package:rxdart/subjects.dart';
 import 'package:simple_app/src/counter_widget.dart';
+import 'package:simple_app/src/di/di.dart';
+import 'package:simple_app/src/di/services/services.dart';
 import 'package:simple_app/src/models/product.dart';
 import 'package:simple_app/src/states/counter_bloc.dart';
 import 'package:simple_app/src/states/counter_notifier.dart';
@@ -53,6 +57,7 @@ class ClockWidget extends ConsumerWidget {
 }
 
 void main() async {
+  configureDependencies();
   runApp(
     ProviderScope(
       child: MyApp(),
@@ -156,11 +161,24 @@ class _MyHomePageState extends State<MyHomePage> {
         // body : ExampleWidget(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            setState(() {
-              isChangeWindow = !isChangeWindow;
-            });
+            // ################## change life cycle ##################
+            // setState(() {
+            //   isChangeWindow = !isChangeWindow;
+            // });
+
+            // ################## methods from DI ##################
+            final service = GetIt.I<ServiceB>();
+            // service.hello();
+            // service.sayBye();
+
+            final genericService = GetIt.I<Service>(instanceName: "serviceD");
+            // genericService.work();
+
+            final serviceG = GetIt.I<Service>();
+            serviceG.makeNoise();
+
+            // ################## methods from StateNotifierProvider ##################
             // ref.read(productController.notifier).incrementCounter();
-            // _counterBloc.incrementCounter();
           },
           tooltip: 'Increment',
           child: Icon(Icons.add),

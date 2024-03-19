@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:focus_detector_v2/focus_detector_v2.dart';
 
 abstract class MyAbstractWidget extends StatefulWidget {
   final String extraParameter;
@@ -12,9 +14,14 @@ abstract class MyAbstractWidget extends StatefulWidget {
   // Método abstracto para ser implementado por las subclases
   Widget buildWidget(BuildContext context, String extraParameter);
 
+  void onResume() {}
+
+  void onPause() {}
+
   void setState(VoidCallback fn) {
-    setState(() => fn());
+    state.setState(() => fn());
   }
+
 }
 
 class _MyAbstractWidgetState extends State<MyAbstractWidget> {
@@ -26,7 +33,9 @@ class _MyAbstractWidgetState extends State<MyAbstractWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // Llama al método buildWidget de la subclase con el parámetro extra
-    return widget.buildWidget(context, widget.extraParameter);
+    return FocusDetector(
+        onFocusLost: () => widget.onPause(),
+        onFocusGained: () => widget.onResume(),
+        child: widget.buildWidget(context, widget.extraParameter));
   }
 }
