@@ -12,7 +12,7 @@ part of 'product_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ProductState {
@@ -87,25 +87,23 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$InitialCopyWith<$Res> {
+  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
+      __$$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ProductStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$InitialCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$Initial>
+    implements _$$InitialCopyWith<$Res> {
+  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitialImpl implements Initial {
-  const _$InitialImpl();
+class _$Initial implements Initial {
+  const _$Initial();
 
   @override
   String toString() {
@@ -113,9 +111,9 @@ class _$InitialImpl implements Initial {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$Initial);
   }
 
   @override
@@ -197,29 +195,27 @@ class _$InitialImpl implements Initial {
 }
 
 abstract class Initial implements ProductState {
-  const factory Initial() = _$InitialImpl;
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+abstract class _$$LoadingCopyWith<$Res> {
+  factory _$$LoadingCopyWith(_$Loading value, $Res Function(_$Loading) then) =
+      __$$LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$ProductStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+class __$$LoadingCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$Loading>
+    implements _$$LoadingCopyWith<$Res> {
+  __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingImpl implements Loading {
-  const _$LoadingImpl();
+class _$Loading implements Loading {
+  const _$Loading();
 
   @override
   String toString() {
@@ -227,9 +223,9 @@ class _$LoadingImpl implements Loading {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+        (other.runtimeType == runtimeType && other is _$Loading);
   }
 
   @override
@@ -311,29 +307,27 @@ class _$LoadingImpl implements Loading {
 }
 
 abstract class Loading implements ProductState {
-  const factory Loading() = _$LoadingImpl;
+  const factory Loading() = _$Loading;
 }
 
 /// @nodoc
-abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+abstract class _$$ErrorCopyWith<$Res> {
+  factory _$$ErrorCopyWith(_$Error value, $Res Function(_$Error) then) =
+      __$$ErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$ProductStateCopyWithImpl<$Res, _$ErrorImpl>
-    implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+class __$$ErrorCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$Error>
+    implements _$$ErrorCopyWith<$Res> {
+  __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ErrorImpl implements Error {
-  const _$ErrorImpl();
+class _$Error implements Error {
+  const _$Error();
 
   @override
   String toString() {
@@ -341,9 +335,9 @@ class _$ErrorImpl implements Error {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ErrorImpl);
+        (other.runtimeType == runtimeType && other is _$Error);
   }
 
   @override
@@ -425,14 +419,13 @@ class _$ErrorImpl implements Error {
 }
 
 abstract class Error implements ProductState {
-  const factory Error() = _$ErrorImpl;
+  const factory Error() = _$Error;
 }
 
 /// @nodoc
-abstract class _$$DataImplCopyWith<$Res> {
-  factory _$$DataImplCopyWith(
-          _$DataImpl value, $Res Function(_$DataImpl) then) =
-      __$$DataImplCopyWithImpl<$Res>;
+abstract class _$$DataCopyWith<$Res> {
+  factory _$$DataCopyWith(_$Data value, $Res Function(_$Data) then) =
+      __$$DataCopyWithImpl<$Res>;
   @useResult
   $Res call({Product product});
 
@@ -440,10 +433,10 @@ abstract class _$$DataImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$DataImplCopyWithImpl<$Res>
-    extends _$ProductStateCopyWithImpl<$Res, _$DataImpl>
-    implements _$$DataImplCopyWith<$Res> {
-  __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
+class __$$DataCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$Data>
+    implements _$$DataCopyWith<$Res> {
+  __$$DataCopyWithImpl(_$Data _value, $Res Function(_$Data) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -451,7 +444,7 @@ class __$$DataImplCopyWithImpl<$Res>
   $Res call({
     Object? product = null,
   }) {
-    return _then(_$DataImpl(
+    return _then(_$Data(
       null == product
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
@@ -470,8 +463,8 @@ class __$$DataImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataImpl implements Data {
-  const _$DataImpl(this.product);
+class _$Data implements Data {
+  const _$Data(this.product);
 
   @override
   final Product product;
@@ -482,10 +475,10 @@ class _$DataImpl implements Data {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataImpl &&
+            other is _$Data &&
             (identical(other.product, product) || other.product == product));
   }
 
@@ -495,8 +488,8 @@ class _$DataImpl implements Data {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
-      __$$DataImplCopyWithImpl<_$DataImpl>(this, _$identity);
+  _$$DataCopyWith<_$Data> get copyWith =>
+      __$$DataCopyWithImpl<_$Data>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -574,10 +567,9 @@ class _$DataImpl implements Data {
 }
 
 abstract class Data implements ProductState {
-  const factory Data(final Product product) = _$DataImpl;
+  const factory Data(final Product product) = _$Data;
 
   Product get product;
   @JsonKey(ignore: true)
-  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DataCopyWith<_$Data> get copyWith => throw _privateConstructorUsedError;
 }

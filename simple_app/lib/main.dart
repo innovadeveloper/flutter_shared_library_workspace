@@ -17,6 +17,9 @@ import 'package:simple_app/src/states/counter_state_notifier.dart';
 import 'package:intl/intl.dart';
 import 'package:simple_app/src/ui/abstract_widget.dart';
 import 'package:simple_app/src/ui/clock/clock_controller.dart';
+import 'package:simple_app/src/ui/login/login_state.dart';
+import 'package:simple_app/src/ui/login/login_view_model.dart';
+import 'package:simple_app/src/ui/login/login_widget.dart';
 import 'package:simple_app/src/ui/order/order_widget.dart';
 import 'package:simple_app/src/ui/products/product_controller.dart';
 import 'package:simple_app/src/ui/products/product_state.dart';
@@ -41,6 +44,11 @@ final clockController = StateNotifierProvider<ClockController, DateTime>((ref) {
 final productController =
     StateNotifierProvider<ProductController, ProductState>((ref) {
   return ProductController();
+});
+
+final loginController =
+    StateNotifierProvider<LoginViewModel, LoginState>((ref) {
+  return LoginViewModel();
 });
 
 // [WIDGET PAGE]
@@ -128,7 +136,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final CounterBloc _counterBloc = CounterBloc();
-  var isChangeWindow = false;
+  var isChangeWindow = true;
 
   @override
   Widget build(BuildContext context) {
@@ -145,18 +153,14 @@ class _MyHomePageState extends State<MyHomePage> {
         // body: ClockWidget(),
         body: Center(
             child: (isChangeWindow)
-                ? OrderWidget(extraParameter: "widget child")
+                ? LoginWidget(
+                    extraParameter: "widget child",
+                  )
+                // ? OrderWidget(extraParameter: "widget child")
                 : Text(
                     "simple text",
                     style: TextStyle(color: Colors.red),
                   )),
-        // body: Center(
-        //     child: FutureBuilder(
-        //         future: result,
-        //         builder: (context, snapshot) {
-        //           print('result from isolate : ${snapshot.data}');
-        //           return ProductWidget();
-        //         })),
 
         // body : ExampleWidget(),
         floatingActionButton: FloatingActionButton(
@@ -179,6 +183,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
             // ################## methods from StateNotifierProvider ##################
             // ref.read(productController.notifier).incrementCounter();
+
+            ref.read(loginController.notifier).incrementCounter();
           },
           tooltip: 'Increment',
           child: Icon(Icons.add),

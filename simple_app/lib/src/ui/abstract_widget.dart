@@ -21,7 +21,6 @@ abstract class MyAbstractWidget extends StatefulWidget {
   void setState(VoidCallback fn) {
     state.setState(() => fn());
   }
-
 }
 
 class _MyAbstractWidgetState extends State<MyAbstractWidget> {

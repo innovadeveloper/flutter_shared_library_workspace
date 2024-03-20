@@ -34,6 +34,8 @@ dependencies:
   # DI
   injectable:
   get_it:
+  shared_library:
+    path: ../shared_library/
 
 dev_dependencies:
   flutter_test:

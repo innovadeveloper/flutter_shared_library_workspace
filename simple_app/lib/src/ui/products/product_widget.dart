@@ -29,7 +29,7 @@ class ProductWidget extends ConsumerWidget {
     }).catchError((error) {
       print("error => $error");
     });
-    
+
     // ref.read(productController.notifier).incrementCounter();
 
     // watch the StateNotifierProvider to return a DateTime (the state)
