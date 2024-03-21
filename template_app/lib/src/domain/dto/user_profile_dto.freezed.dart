@@ -12,7 +12,7 @@ part of 'user_profile_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserProfileDTO {
@@ -69,22 +69,22 @@ class _$UserProfileDTOCopyWithImpl<$Res, $Val extends UserProfileDTO>
 }
 
 /// @nodoc
-abstract class _$$_UserProfileDTOCopyWith<$Res>
+abstract class _$$UserProfileDTOImplCopyWith<$Res>
     implements $UserProfileDTOCopyWith<$Res> {
-  factory _$$_UserProfileDTOCopyWith(
-          _$_UserProfileDTO value, $Res Function(_$_UserProfileDTO) then) =
-      __$$_UserProfileDTOCopyWithImpl<$Res>;
+  factory _$$UserProfileDTOImplCopyWith(_$UserProfileDTOImpl value,
+          $Res Function(_$UserProfileDTOImpl) then) =
+      __$$UserProfileDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name, int age});
 }
 
 /// @nodoc
-class __$$_UserProfileDTOCopyWithImpl<$Res>
-    extends _$UserProfileDTOCopyWithImpl<$Res, _$_UserProfileDTO>
-    implements _$$_UserProfileDTOCopyWith<$Res> {
-  __$$_UserProfileDTOCopyWithImpl(
-      _$_UserProfileDTO _value, $Res Function(_$_UserProfileDTO) _then)
+class __$$UserProfileDTOImplCopyWithImpl<$Res>
+    extends _$UserProfileDTOCopyWithImpl<$Res, _$UserProfileDTOImpl>
+    implements _$$UserProfileDTOImplCopyWith<$Res> {
+  __$$UserProfileDTOImplCopyWithImpl(
+      _$UserProfileDTOImpl _value, $Res Function(_$UserProfileDTOImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +94,7 @@ class __$$_UserProfileDTOCopyWithImpl<$Res>
     Object? name = null,
     Object? age = null,
   }) {
-    return _then(_$_UserProfileDTO(
+    return _then(_$UserProfileDTOImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -113,8 +113,8 @@ class __$$_UserProfileDTOCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserProfileDTO implements _UserProfileDTO {
-  const _$_UserProfileDTO(
+class _$UserProfileDTOImpl implements _UserProfileDTO {
+  const _$UserProfileDTOImpl(
       {required this.id, required this.name, required this.age});
 
   @override
@@ -130,10 +130,10 @@ class _$_UserProfileDTO implements _UserProfileDTO {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserProfileDTO &&
+            other is _$UserProfileDTOImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.age, age) || other.age == age));
@@ -145,15 +145,16 @@ class _$_UserProfileDTO implements _UserProfileDTO {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserProfileDTOCopyWith<_$_UserProfileDTO> get copyWith =>
-      __$$_UserProfileDTOCopyWithImpl<_$_UserProfileDTO>(this, _$identity);
+  _$$UserProfileDTOImplCopyWith<_$UserProfileDTOImpl> get copyWith =>
+      __$$UserProfileDTOImplCopyWithImpl<_$UserProfileDTOImpl>(
+          this, _$identity);
 }
 
 abstract class _UserProfileDTO implements UserProfileDTO {
   const factory _UserProfileDTO(
       {required final String id,
       required final String name,
-      required final int age}) = _$_UserProfileDTO;
+      required final int age}) = _$UserProfileDTOImpl;
 
   @override
   String get id;
@@ -163,6 +164,6 @@ abstract class _UserProfileDTO implements UserProfileDTO {
   int get age;
   @override
   @JsonKey(ignore: true)
-  _$$_UserProfileDTOCopyWith<_$_UserProfileDTO> get copyWith =>
+  _$$UserProfileDTOImplCopyWith<_$UserProfileDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

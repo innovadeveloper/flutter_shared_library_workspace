@@ -36,6 +36,7 @@ dependencies:
   get_it:
   shared_library:
     path: ../shared_library/
+  logger: any  #for logging purpose
 
 dev_dependencies:
   flutter_test:

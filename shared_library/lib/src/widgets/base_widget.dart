@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:focus_detector_v2/focus_detector_v2.dart';
+import 'package:get_it/get_it.dart';
+import 'package:logger/logger.dart';
 
 /**
  * Created by Kane Baltazar on 20/03/2024.
@@ -12,6 +14,7 @@ import 'package:focus_detector_v2/focus_detector_v2.dart';
  */
 abstract class ViewModel<T> extends StateNotifier<T> {
   ViewModel(super.state);
+  final logger = Logger();
 
   void sendValue(T data) {
     state = data;
@@ -33,10 +36,11 @@ abstract class BaseWidget<T extends ViewModel<K>, K> extends ConsumerWidget {
   final String extraParameter;
   late WidgetRef ref;
   late K currentState;
-  final StateNotifierProvider<T, K> provider;
+  late StateNotifierProvider<T, K> provider;
 
-  BaseWidget(this.provider, {Key? key, required this.extraParameter})
-      : super(key: key);
+  BaseWidget({Key? key, required this.extraParameter}) : super(key: key) {
+    this.provider = GetIt.I<StateNotifierProvider<T, K>>();
+  }
 
   void onResume() {}
 

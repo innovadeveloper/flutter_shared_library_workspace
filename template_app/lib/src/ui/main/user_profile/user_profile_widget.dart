@@ -7,6 +7,7 @@ import 'package:template_app/main.dart';
 import 'package:template_app/src/domain/dto/user_profile_dto.dart';
 import 'package:template_app/src/ui/main/user_profile/user_profile_state.dart';
 import 'package:template_app/src/ui/main/user_profile/user_profile_viewmodel.dart';
+import 'package:get_it/get_it.dart';
 
 /**
  * creación de un widget que extiende de MyAbstractWidget (StatefulWidget)
@@ -14,8 +15,7 @@ import 'package:template_app/src/ui/main/user_profile/user_profile_viewmodel.dar
 class UserProfileWidget
     extends BaseWidget<UserProfileViewModel, UserProfileState> {
   UserProfileWidget({Key? key, required String extraParameter})
-      : super(userProfileViewModelProvider,
-            key: key, extraParameter: extraParameter) {
+      : super(key: key, extraParameter: extraParameter) {
     super.currentState = UserProfileState.initial();
   }
 

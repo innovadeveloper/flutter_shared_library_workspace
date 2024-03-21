@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:template_app/src/di/di.dart';
 import 'package:template_app/src/ui/main/calculator/calculator_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:template_app/src/ui/main/user_profile/user_profile_state.dart';
 import 'package:template_app/src/ui/main/user_profile/user_profile_viewmodel.dart';
 import 'package:template_app/src/ui/main/user_profile/user_profile_widget.dart';
+import 'package:get_it/get_it.dart';
 
 // flutter packages pub run build_runner build --delete-conflicting-outputs
-
-// view model list..
-final userProfileViewModelProvider =
-    StateNotifierProvider<UserProfileViewModel, UserProfileState>((ref) {
-  return UserProfileViewModel();
-});
+// flutter pub run build_runner build
+// final userProfileViewModel = GetIt.I<StateNotifierProvider<UserProfileViewModel, UserProfileState>>();
 
 void main() {
+  configureDependencies();
   runApp(const MyApp());
 }
 
@@ -72,7 +71,8 @@ class MyApp extends StatelessWidget {
             ),
             floatingActionButton: FloatingActionButton(
               onPressed: () {
-                ref.read(userProfileViewModelProvider.notifier).fetchData();
+                final userProfileViewModel = GetIt.I<StateNotifierProvider<UserProfileViewModel, UserProfileState>>();
+                ref.read(userProfileViewModel.notifier).fetchData();
               },
               tooltip: 'Increment',
               child: Icon(Icons.search),

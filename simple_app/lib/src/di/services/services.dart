@@ -116,7 +116,7 @@ abstract class RegisterModule {
   @singleton
   ServiceF get serviceF;
 
-  // @Named("serviceG")
+  @Named("serviceG")
   @Injectable(as: Service)
   ServiceGImpl get serviceG;
 }

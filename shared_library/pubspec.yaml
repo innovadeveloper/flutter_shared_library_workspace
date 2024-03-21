@@ -20,6 +20,7 @@ dependencies:
   # DI
   injectable:
   get_it:
+  logger: any
   
 
 dev_dependencies:
