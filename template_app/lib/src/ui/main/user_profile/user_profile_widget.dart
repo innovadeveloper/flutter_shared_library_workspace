@@ -30,15 +30,13 @@ class UserProfileWidget
     super.onPause();
     print("onFocusGained - onPause");
   }
-  
 
   @override
   Widget buildWidget(BuildContext context, String extraParameter, WidgetRef ref,
       UserProfileState renderState) {
     return renderState.when(
-      initial: () =>
-          InkWell(onTap: () => {viewModel.fetchData()}, child: Text("initial")),
-      loading: () => Text("loading"),
+      initial: () => Text("initial"),
+      loading: () => CircularProgressIndicator(),
       error: () => Text("error"),
       data: (UserProfileDTO content) => InkWell(
           onTap: () => {viewModel.fetchData()},

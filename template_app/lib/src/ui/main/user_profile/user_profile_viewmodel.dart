@@ -15,7 +15,7 @@ class UserProfileViewModel extends ViewModel<UserProfileState> {
   Future<void> fetchData() async {
     try {
       print("fetchin profile data from some server...");
-      sendValue(UserProfileState.initial());
+      sendValue(UserProfileState.loading());
       await Future.delayed(Duration(seconds: 1));
       sendValue(UserProfileState.data(
           const UserProfileDTO(id: "xyz", name: "Kane", age: 31)));
