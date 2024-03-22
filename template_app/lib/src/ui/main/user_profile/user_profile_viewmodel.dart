@@ -19,20 +19,11 @@ class UserProfileViewModel extends ViewModel<UserProfileState> {
   UserProfileViewModel({required this.taskApi, required this.storeApi})
       : super(UserProfileState.initial());
 
-  /**
-   * simulate fetch data
-   */
   Future<void> fetchData() async {
     try {
       sendValue(UserProfileState.loading());
-      print("CONSULTANDO TAREAS FROM TASK API");
-      // final tasks = await this.taskApi.getTasks();
-      // logger.i(tasks);
-      print("CONSULTANDO PRODUCTO FROM STORE API");
       final product = await this.storeApi.getProducts();
       logger.i(product);
-
-      print("fetchin profile data from some server...");
       await Future.delayed(Duration(seconds: 1));
       sendValue(UserProfileState.data(
           const UserProfileDTO(id: "xyz", name: "Kane", age: 31)));

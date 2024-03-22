@@ -1,4 +1,6 @@
 // Definición de una subclase que extiende de MyAbstractWidget
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/src/consumer.dart';
@@ -9,6 +11,7 @@ import 'package:template_app/src/ui/main/user_profile/user_profile_state.dart';
 import 'package:template_app/src/ui/main/user_profile/user_profile_viewmodel.dart';
 import 'package:get_it/get_it.dart';
 
+// ignore: must_be_immutable
 /**
  * creación de un widget que extiende de MyAbstractWidget (StatefulWidget)
  */

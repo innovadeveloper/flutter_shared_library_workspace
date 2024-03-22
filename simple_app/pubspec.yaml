@@ -9,8 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # object_mapper_library:
-  #   path: "../object_mapper_library"
   lib_3:
     git:
       url: https://kbaltazar:glpat-ussqdkd3aFznXkRiqqaT@gitlab.abexa.pe/abexa-flutter-libraries/library2-flutter-training.git
